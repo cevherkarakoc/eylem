@@ -1,0 +1,23 @@
+{
+  "name": "eylem",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test-watchAll": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cevherkarakoc/eylem.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cevherkarakoc/eylem/issues"
+  },
+  "homepage": "https://github.com/cevherkarakoc/eylem#readme",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
