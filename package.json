@@ -1,7 +1,7 @@
 {
   "name": "eylem",
   "version": "0.0.1",
-  "description": "",
+  "description": "A JavaScript input handling library for animation or game loops",
   "main": "index.js",
   "scripts": {
     "test": "jest",
