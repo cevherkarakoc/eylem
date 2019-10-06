@@ -1,4 +1,7 @@
 # eylem
+[![npm version](https://img.shields.io/npm/v/eylem.svg?style=flat)](https://www.npmjs.com/package/eylem)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+
 A JavaScript input handling library for animation or game loops
 
 ## Installation
