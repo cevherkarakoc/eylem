@@ -1,9 +1,3 @@
-const handler = keymap => keyCode => {
-  if (!keymap[keyCode]) return;
-
-  return (pair = keymap[keyCode]);
-};
-
 class Eylem {
   constructor(doc, actions) {
     this.doc = doc;
