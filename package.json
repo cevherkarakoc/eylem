@@ -1,6 +1,6 @@
 {
   "name": "eylem",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A JavaScript input handling library for animation or game loops",
   "main": "index.js",
   "scripts": {
@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/cevherkarakoc/eylem#readme",
   "devDependencies": {
-    "jest": "^24.8.0"
+    "jest": "^24.9.0"
   }
 }

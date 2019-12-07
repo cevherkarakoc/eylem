@@ -1,35 +1,68 @@
 class Eylem {
+  static get KEY_DOWN() {
+    return {
+      name: 'keydown',
+      code: 'keyCode',
+    };
+  }
+
+  static get KEY_PRESS() {
+    return {
+      name: 'keypress',
+      code: 'keyCode',
+    };
+  }
+
+  static get KEY_UP() {
+    return {
+      name: 'keyup',
+      code: 'keyCode',
+    };
+  }
+
+  static get MOUSE_DOWN() {
+    return {
+      name: 'mousedown',
+      code: 'button',
+    };
+  }
+
+  static get MOUSE_UP() {
+    return {
+      name: 'mouseup',
+      code: 'button',
+    };
+  }
+
   constructor(doc, actions) {
     this.doc = doc;
     this.key = null;
     this.actions = {};
     this.mouse = new MouseEvent('mousemove');
 
+    this._mouseMoveListener = event => {
+      this.mouse = event;
+    };
+
     actions.forEach(action => {
       this.actions[action] = 0;
     });
   }
 
-  bindKeyMap(eventName, keyDownMap) {
+  bindInputMap(event, inputMap) {
     this.doc.addEventListener(
-      eventName,
-      e => this._handleInput(keyDownMap, e.keyCode),
-      true
-    );
-  }
-
-  bindMouseMap(eventName, mouseMap) {
-    this.doc.addEventListener(
-      eventName,
-      e => this._handleInput(mouseMap, e.button),
+      event.name,
+      e => this._handleInput(inputMap, e[event.code]),
       true
     );
   }
 
   watchMouse() {
-    this.doc.addEventListener('mousemove', event => {
-      this.mouse = event;
-    });
+    this.doc.addEventListener('mousemove', this._mouseMoveListener, true);
+  }
+
+  stopWatchMouse() {
+    this.doc.removeEventListener('mousemove', this._mouseMoveListener, true);
   }
 
   clear() {

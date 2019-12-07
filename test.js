@@ -15,8 +15,8 @@ describe('TEST', () => {
       0: { action: 'jump', value: 1 },
     };
 
-    eylem.bindKeyMap('keydown', keyMap);
-    eylem.bindMouseMap('mousedown', mouseMap);
+    eylem.bindInputMap(Eylem.KEY_DOWN, keyMap);
+    eylem.bindInputMap(Eylem.MOUSE_DOWN, mouseMap);
     eylem.watchMouse();
   });
 
