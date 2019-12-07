@@ -23,7 +23,7 @@ const inputs = new Eylem(document, ['horizantal', 'vertical', 'fire']);
 ### Bind keymap
 ```javascript
 //KeyCode 65:A, 68:D, 83:S, 87:W
-inputs.bindKeyMap('keydown', {
+inputs.bindInputMap(Eylem.KEY_DOWN, {
   65: { action: 'horizantal', value: -1 },
   68: { action: 'horizantal', value: +1 },
   83: { action: 'vertical', value: -1 },
@@ -34,7 +34,7 @@ inputs.bindKeyMap('keydown', {
 ### Bind mouse buttons
 ```javascript
 // 0 : Left Mouse Button
-inputs.bindMouseMap('mousedown', {
+inputs.bindInputMap(Eylem.MOUSE_DOWN, {
   0: {action : 'fire', value : 1}
 });
 ```
