@@ -1,6 +1,7 @@
 # eylem
 [![npm version](https://img.shields.io/npm/v/eylem.svg?style=flat)](https://www.npmjs.com/package/eylem)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcevherkarakoc%2Feylem.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcevherkarakoc%2Feylem?ref=badge_shield)
 
 A JavaScript input handling library for animation or game loops
 
@@ -63,3 +64,5 @@ function step() {
 
 # License
 Licensed under the [MIT license](LICENSE).
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcevherkarakoc%2Feylem.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcevherkarakoc%2Feylem?ref=badge_large)
