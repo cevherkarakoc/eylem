@@ -65,11 +65,14 @@ class Eylem {
     this.doc.removeEventListener('mousemove', this._mouseMoveListener, true);
   }
 
-  clear() {
+  clear(clearMouseEvent = false) {
     for (let prop in this.actions) {
       this.actions[prop] = 0;
     }
-    this.mouse = new MouseEvent('mousemove');
+
+    if (clearMouseEvent) {
+      this.mouse = new MouseEvent('mousemove');
+    }
   }
 
   getValue(action) {
