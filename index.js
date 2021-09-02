@@ -39,9 +39,14 @@ class Eylem {
     this.key = null;
     this.actions = {};
     this.mouse = new MouseEvent('mousemove');
+    this.pointer = new PointerEvent('pointermove');
 
     this._mouseMoveListener = event => {
       this.mouse = event;
+    };
+
+    this._pointerMoveListener = event => {
+      this.pointer = event;
     };
 
     actions.forEach(action => {
@@ -65,13 +70,22 @@ class Eylem {
     this.doc.removeEventListener('mousemove', this._mouseMoveListener, true);
   }
 
-  clear(clearMouseEvent = false) {
+  watchPointer() {
+    this.doc.addEventListener('pointermove', this._pointerMoveListener, true);
+  }
+
+  stopWatchPointer() {
+    this.doc.removeEventListener('pointermove', this._pointerMoveListener, true);
+  }
+
+  clear(clearPointerEvents = false) {
     for (let prop in this.actions) {
       this.actions[prop] = 0;
     }
 
-    if (clearMouseEvent) {
+    if (clearPointerEvents) {
       this.mouse = new MouseEvent('mousemove');
+      this.pointer = new PointerEvent('pointermove');
     }
   }
 

@@ -1,4 +1,5 @@
 const Eylem = require('./index');
+PointerEvent = MouseEvent;
 
 const KEY_A = 65,
   KEY_D = 68;
@@ -18,6 +19,7 @@ describe('TEST', () => {
     eylem.bindInputMap(Eylem.KEY_DOWN, keyMap);
     eylem.bindInputMap(Eylem.MOUSE_DOWN, mouseMap);
     eylem.watchMouse();
+    eylem.watchPointer();
   });
 
   test('Default values of actions must be 0(zero)', () => {
@@ -55,11 +57,20 @@ describe('TEST', () => {
     expect(eylem.getValue('jump')).toEqual(excepted);
   });
 
-  test('When mouse move, the value of mouse property must be MouseEvent', () => {
-    const event = new MouseEvent('mousemove');
+  test('When mouse move, mouse.clientX must be equal to Event.clientX', () => {
+    const expected = 710;
+    const event = new MouseEvent('mousemove', { clientX: 710 });
     document.dispatchEvent(event);
 
-    expect(eylem.mouse instanceof MouseEvent).toBe(true);
+    expect(eylem.mouse.clientX).toEqual(expected);
+  });
+
+  test('When pointer move, pointer.clientX must be equal to Event.clientX', () => {
+    const expected = 420;
+    const event = new PointerEvent('pointermove', { clientX: expected });
+    document.dispatchEvent(event);
+    
+    expect(eylem.pointer.clientX).toEqual(expected);
   });
 
   test('After clean, values of actions must be 0(zero)', () => {
